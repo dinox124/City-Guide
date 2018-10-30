@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>BusInfo</ion-title>
+
+
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item *ngFor="let c of countries" (click)="openReview(c.nrc)">
+      <ion-icon name="pin" item-start></ion-icon>
+      <h2>{{c.route}}</h2>
+      <p>{{c.nrc}} &nbsp; &nbsp;&nbsp; {{c.service}} </p>
+    </ion-item>
+  </ion-list>
+</ion-content>
